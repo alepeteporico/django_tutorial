@@ -23,7 +23,7 @@ jobs:
     - name: akhileshns/heroku-deploy@v3.8.9
       uses: actions/setup-python@v2
       with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_api_key: ${{secrets.HEROKU}}
           heroku_app_name: "integracion"
           heroku_email: "tojandro@gmail.com"
           procfile: "web: npm start"
