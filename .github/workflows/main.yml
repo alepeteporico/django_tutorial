@@ -20,10 +20,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: akhileshns/heroku-deploy@v3.8.9
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "integracion"
+          heroku_email: "tojandro@gmail.com"
+          procfile: "web: npm start"
     - name: Requerimientos
       run: |
         pip install --upgrade pip
